@@ -8,7 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: DoSomething
-      run: |
-        sudo pip install mkdocs
-    - run: mkdocs --version
+    - run: sudo pip3 install mkdocs
+    - run: mkdocs gh-deploy
