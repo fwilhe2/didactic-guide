@@ -10,5 +10,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: DoSomething
       run: |
-        pip install mkdocs
+        sudo pip install mkdocs
     - run: mkdocs --version
