@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-    branches: 
+    branches:
       - main
   workflow_dispatch:
 
@@ -10,5 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: sudo pip install mkdocs
+    - run: pip --user install mkdocs
+    - run: find . -name mkdocs
     - run: mkdocs build && mkdocs gh-deploy --force
