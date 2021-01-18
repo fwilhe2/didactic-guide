@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: pip --user install mkdocs
+    - run: pip install --user mkdocs
     - run: find . -name mkdocs
     - run: mkdocs build && mkdocs gh-deploy --force
