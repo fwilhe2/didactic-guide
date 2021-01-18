@@ -14,7 +14,7 @@ jobs:
       with:
         version: 1.4.30-RC
     - run: |
-          java.io.File("docs/posts.md").writeText(java.io.File("docs").listFiles().filter{!it.toString().contains("index")}.map {it -> "[${it.getName().split(".")[0].toString()}](${it.getName().split(".")[0].toString()})"}.joinToString(separator = "\n"))
+          java.io.File("docs/posts.md").writeText(java.io.File("docs").listFiles().filter{!it.toString().contains("index")}.map {it -> "[${it.getName().split(".")[0].toString()}](${it.getName().split(".")[0].toString()})"}.joinToString(separator = "\n", prefix = "- "))
       shell: kotlin -howtorun .main.kts {0}
     - run: sudo pip install mkdocs
     - run: mkdocs build && mkdocs gh-deploy --force
